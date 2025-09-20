@@ -1,8 +1,12 @@
 #import into main
+def sort_on(dictionary):
+    return dictionary["num"]
+
 def word_count(text):
     words = text.split()
     num_words = len(words)
-    print(f'{num_words} words found in the document')
+    return num_words
+    
 
 def character_count(text):
     alphabet = {
@@ -14,5 +18,16 @@ def character_count(text):
     for letter in alphabet:
         value = lcasetext.count(letter)
         alphabet[letter] = value
-    print(alphabet)
+    return alphabet
+
+def sort_char_dict(dictionary):
+    dict_list = []
+    for char in dictionary:
+        new_dict = {"char": char, "num": dictionary[char]}
+        dict_list.append(new_dict)
+    dict_list.sort(reverse=True, key=sort_on)
+    return dict_list
+
+
+
         
